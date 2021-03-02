@@ -1,0 +1,10 @@
+streamlit
+tensorflow>=2.4
+keras
+sklearn
+matplotlib
+seaborn
+numpy
+pandas
+plotly
+pandas_datareader
