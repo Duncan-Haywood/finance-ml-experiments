@@ -1,10 +1,10 @@
-from keras.preprocessing import timeseries_dataset_from_array
+from tensorflow.keras.preprocessing import timeseries_dataset_from_array
 import numpy as np
 class KerasPreprocess:
     def __init__():
         pass
     @classmethod
-    def keras_batch_preprocess(cls, stocks_df, company_name, metric, lookback_length=60, batch_size=60):
+    def keras_batch_preprocess(cls, stocks_df=None, company_name=None, metric=None, lookback_length=60, batch_size=30):
         column_list = cls.get_column_list(stocks_df, company_name, metric)
         data, targets = cls.get_data_targets_split(column_list, lookback_length=lookback_length)
         data_train, data_val, data_test = cls.train_val_test_split(data)
@@ -19,7 +19,7 @@ class KerasPreprocess:
         column_list = column_slice.tolist()
         return column_list
     @staticmethod
-    def get_data_targets_split(column_list, lookback_length=lookback_length):
+    def get_data_targets_split(column_list, lookback_length=None):
         data = np.array([[x] for x in column_list[:-lookback_length]])
         targets = np.array([y for y in column_list[lookback_length:]])
         return data, targets
