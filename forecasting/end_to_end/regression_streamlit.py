@@ -4,7 +4,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from ingest_stocks_to_df import IngestStocks
-from visualizations import Visualizations
+from visualize_stocks import VisualizeStocks
 from keras_stock_preprocessing import KerasPreprocess
 from model_stock_fit import ModelFit
 from keras.utils import plot_model, model_to_dot
@@ -22,7 +22,7 @@ st.dataframe(data=stocks_df)
 stock_names = st.multiselect(options=ticker_list, label='Stock To Plot', default=ticker_list[0])
 
 column_metric = 'Adj Close'
-fig = Visualizations.add_stocks_fig(stock_names=stock_names, column_metric=column_metric,stocks_df=stocks_df)
+fig = VisualizeStocks.add_stocks_fig(stock_names=stock_names, column_metric=column_metric,stocks_df=stocks_df)
 st.pyplot(fig)
 
 
@@ -37,7 +37,7 @@ mf = ModelFit
 model=mf.gru_model
 
 history, model = mf.train_model(train_data=train_ds, validation_data=val_ds, model=model)
-st.graphviz_chart(model_to_dot(model, rankdir="LR"))
+# st.graphviz_chart(model_to_dot(model, rankdir="LR"))
 test_error = mf.evaluate_model(model=model, test_data=test_ds)
 st.text('test_error:{}'.format(test_error))
 st.subheader('Train error and validation error by epoch of training')

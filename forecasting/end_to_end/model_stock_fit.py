@@ -29,7 +29,7 @@ class ModelFit:
     def pred_next_days(cls, future_num_days=None, previous_days=None, model=None):
         y_preds = list()
         new_days = previous_days
-        for day in future_num_days:
+        for day in range(future_num_days):
             y_pred = cls.predict_tomorrow(previous_days=new_days, model=model)
             new_days = cls.update_to_tomorrow(previous_days=new_days, y_pred=y_pred)
             y_preds.append(y_pred)
