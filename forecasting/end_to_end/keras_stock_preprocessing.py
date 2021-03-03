@@ -18,11 +18,14 @@ class KerasPreprocess:
         column_slice = stocks_df[company_name, metric]
         column_list = column_slice.tolist()
         return column_list
-    @staticmethod
-    def get_data_targets_split(column_list, lookback_length=None):
-        data = np.array([[x] for x in column_list[:-lookback_length]])
+    @classmethod
+    def get_data_targets_split(cls, column_list=None, lookback_length=None):
+        data = cls.get_back_days(column_list=column_list, lookback_length=lookback_length)
         targets = np.array([y for y in column_list[lookback_length:]])
         return data, targets
+    @staticmethod
+    def get_back_days(column_list=None, lookback_length=None):
+        data = np.array([[x] for x in column_list[:-lookback_length]])
     @staticmethod
     def train_val_test_split(data, test_size=0.2):
         test_length = int(len(data)*test_size)

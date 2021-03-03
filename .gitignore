@@ -1,4 +1,4 @@
 .ipynb_checkpoints
 *cache.sqlite
-*__pycache__/
-*site-packages/
+*__pycache__
+*site-packages

@@ -6,7 +6,8 @@ import pandas as pd
 from ingest_stocks_to_df import IngestStocks
 from visualizations import Visualizations
 from keras_stock_preprocessing import KerasPreprocess
-from stock_model_fit import ModelFit
+from model_stock_fit import ModelFit
+from keras.utils import plot_model, model_to_dot
 
 st.title('Finance Predictions')
 ## data loading
@@ -23,19 +24,23 @@ stock_names = st.multiselect(options=ticker_list, label='Stock To Plot', default
 column_metric = 'Adj Close'
 fig = Visualizations.add_stocks_fig(stock_names=stock_names, column_metric=column_metric,stocks_df=stocks_df)
 st.pyplot(fig)
+
+
 ## predictions
 st.header('Predictions')
 company_name = 'GSIT'
 lookback_length=40
 
+
 train_ds, val_ds, test_ds = KerasPreprocess.keras_batch_preprocess(stocks_df=stocks_df, company_name=company_name, metric=column_metric, lookback_length=lookback_length)
-
 mf = ModelFit
-model=mf.gru_model()
-history, model = mf.train_model(train_data=train_ds, validation_data=val_ds, model=model)
+model=mf.gru_model
 
-test_error = mf.evaluate_model(model, test_ds)
+history, model = mf.train_model(train_data=train_ds, validation_data=val_ds, model=model)
+st.graphviz_chart(model_to_dot(model, rankdir="LR"))
+test_error = mf.evaluate_model(model=model, test_data=test_ds)
 st.text('test_error:{}'.format(test_error))
+st.subheader('Train error and validation error by epoch of training')
 train_error = pd.DataFrame(history.history)
 st.dataframe(train_error)
 

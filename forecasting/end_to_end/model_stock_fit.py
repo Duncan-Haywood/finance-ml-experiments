@@ -23,4 +23,24 @@ class ModelFit:
         return history, model
     @staticmethod
     def evaluate_model(model=None,test_data=None):
-        model.evaluate(test_data)
+        test_error = model.evaluate(test_data)
+        return test_error[1]
+    @classmethod
+    def pred_next_days(cls, future_num_days=None, previous_days=None, model=None):
+        y_preds = list()
+        new_days = previous_days
+        for day in future_num_days:
+            y_pred = cls.predict_tomorrow(previous_days=new_days, model=model)
+            new_days = cls.update_to_tomorrow(previous_days=new_days, y_pred=y_pred)
+            y_preds.append(y_pred)
+        return y_preds
+    @staticmethod
+    def predict_tomorrow(previous_days=None, model=None):
+        y_pred = model.predict(previous_days)
+        return y_pred
+    @staticmethod
+    def update_to_tomorrow(previous_days=None, y_pred=None):
+        new_days = previous_days[1:-1].append(y_pred)
+        return new_days
+    
+
