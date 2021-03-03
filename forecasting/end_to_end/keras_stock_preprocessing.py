@@ -34,11 +34,11 @@ class KerasPreprocess:
     @staticmethod
     def get_back_days(column_list=None, lookback_length=None, latest_day=None):
         data = np.array([[x] for x in column_list[latest_day-lookback_length:latest_day]])
-        data.reshape((1, len(data), 1))
+        data = data.reshape((1, len(data), 1))
         return data
     @classmethod
     def get_prediction_data(cls, stocks_df=None, company_name=None, metric=None, lookback_length=None, latest_day=None):
-        column_list=cls.get_column_list(stocks_df, company_name, metric)
+        column_list=cls.get_column_list(stocks_df=stocks_df, company_name=company_name, metric=metric)
         back_days = cls.get_back_days(column_list=column_list, lookback_length=lookback_length, latest_day=latest_day)
         return back_days
    

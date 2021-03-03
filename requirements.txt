@@ -8,3 +8,5 @@ numpy
 pandas
 plotly
 pandas_datareader
+pydot
+graphviz

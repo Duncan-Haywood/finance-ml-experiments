@@ -2,6 +2,7 @@ from keras.layers import Dense, GRU
 from keras import Sequential
 from keras.callbacks import EarlyStopping
 from keras.optimizers import Adam
+import numpy as np
 class ModelFit:
     def __init__(self):
         pass
@@ -40,7 +41,8 @@ class ModelFit:
         return y_pred
     @staticmethod
     def update_to_tomorrow(previous_days=None, y_pred=None):
-        new_days = previous_days[1:-1].append(y_pred)
+        """previous days is np array with shape (any, ..., any); y_pred is scalar"""
+        new_days = np.concatenate((previous_days[:,1:,:], np.array([[[y_pred]]])), axis=1)
         return new_days
     
 
