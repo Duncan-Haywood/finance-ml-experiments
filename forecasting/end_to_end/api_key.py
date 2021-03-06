@@ -1,1 +1,1 @@
-ALPHA_API_KEY = None ## insert your key here
+ALPHA_API_KEY = 'B8JKMG46SOZD9OBT'
