@@ -10,3 +10,6 @@ plotly
 pandas_datareader
 pydot
 graphviz
+xgboost
+lightgbm
+yfinance

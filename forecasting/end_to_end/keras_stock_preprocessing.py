@@ -1,8 +1,6 @@
 from tensorflow.keras.preprocessing import timeseries_dataset_from_array
 import numpy as np
 class KerasPreprocess:
-    def __init__():
-        pass
     @classmethod
     def keras_batch_preprocess(cls, stocks_df=None, company_name=None, metric=None, lookback_length=60, batch_size=30):
         column_list = cls.get_column_list(stocks_df=stocks_df, company_name=company_name, metric=metric)

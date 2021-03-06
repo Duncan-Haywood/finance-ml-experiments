@@ -13,3 +13,13 @@ class VisualizeStocks:
 	    for index in indecies:
 	        ax = sns.lineplot(data=stocks_df, x='date', y=index, label=index[0], ax=ax)
 	    return fig
+	@staticmethod
+	def plot_future(predictions=None, stocks_df=None, latest_day=None, future_num_days=None, company_name=None, column_metric=None):
+		lookback_df = stocks_df.iloc[latest_day:latest_day+future_num_days]
+		actual = lookback_df[(company_name, column_metric)]
+		fig = plt.figure()
+		ax = fig.add_subplot()
+		ax.grid()
+		ax = sns.lineplot(data=actual, ax=ax)
+		ax.plot(lookback_df.date, predictions)
+		return fig
