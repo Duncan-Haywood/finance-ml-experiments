@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/admin/swe/finance_ml_analysis/forecasting/notebooks_exploration/mlruns/1/cff0fd883f3148bba2b739c89e8fd500/artifacts
+end_time: 1615252233281
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+name: ''
+run_id: cff0fd883f3148bba2b739c89e8fd500
+run_uuid: cff0fd883f3148bba2b739c89e8fd500
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1615252232262
+status: 3
+tags: []
+user_id: admin
