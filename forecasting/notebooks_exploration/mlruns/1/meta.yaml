@@ -1,4 +1,0 @@
-artifact_location: file:///Users/admin/swe/finance_ml_analysis/forecasting/notebooks_exploration/mlruns/1
-experiment_id: '1'
-lifecycle_stage: active
-name: percent_change_low_pycaret
