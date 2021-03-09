@@ -1,3 +1,8 @@
+pystan
+fbprophet
+mlflow
+shap
+gplearn
 streamlit
 tensorflow>=2.4
 keras
@@ -13,3 +18,4 @@ graphviz
 xgboost
 lightgbm
 yfinance
+pycaret
