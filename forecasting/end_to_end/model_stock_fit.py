@@ -22,6 +22,17 @@ class ModelFit:
                   metrics=metrics)
         return model
     @staticmethod
+    def gru_stacked_model(nodes=100, dropout=0.2, recurrent_dropout=0.05, learning_rate=0.01, loss='mse', optimizer=Adam, metrics=['mse']):
+        model = Sequential()
+        model.add(Input(shape=(None, 1)))
+        model.add(GRU(nodes))
+        model.add(GRU(nodes))
+        model.add(Dense(1, activation='linear'))
+        model.compile(optimizer=optimizer(learning_rate=learning_rate),
+                  loss=loss,
+                  metrics=metrics)
+        return model
+    @staticmethod
     def stack_3_lstm_model(nodes=50, dropout=0.0, recurrent_dropout=0.0, learning_rate=0.01, loss='mse', optimizer=Adam, metrics=['mse']):
         lstm_layer = LSTM(nodes, dropout=dropout, recurrent_dropout=recurrent_dropout, return_sequences=True)
         model = Sequential()
