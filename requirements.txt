@@ -1,5 +1,4 @@
 pystan
-fbprophet
 mlflow
 shap
 gplearn
@@ -19,3 +18,4 @@ xgboost
 lightgbm
 yfinance
 pycaret
+fbprophet
