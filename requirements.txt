@@ -8,7 +8,7 @@ keras
 sklearn
 matplotlib
 seaborn
-numpy
+numpy==1.19
 pandas
 plotly
 pandas_datareader
