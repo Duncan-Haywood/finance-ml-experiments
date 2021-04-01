@@ -9,3 +9,5 @@ forecasting/end_to_end/data/
 forecasting/notebooks_exploration/api_key.py
 **/alpha_key.yml
 **/*.pkl
+aws/forecasting/temp.parquet
+aws/forecasting/temp.csv
