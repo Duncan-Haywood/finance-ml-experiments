@@ -1,3 +1,4 @@
+**/mlruns
 archive
 forecasting/notebooks_exploration/*.pkl
 forecasting/notebooks_exploration/mlruns/
