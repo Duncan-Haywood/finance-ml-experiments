@@ -1,0 +1,42 @@
+************* Module xgboost_train
+ xgboost_train.py:27: convention (C0303, trailing-whitespace, ) Trailing whitespace
+ xgboost_train.py:30: convention (C0303, trailing-whitespace, ) Trailing whitespace
+ xgboost_train.py:31: convention (C0303, trailing-whitespace, ) Trailing whitespace
+ xgboost_train.py:32: convention (C0303, trailing-whitespace, ) Trailing whitespace
+ xgboost_train.py:37: convention (C0301, line-too-long, ) Line too long (104/100)
+ xgboost_train.py:38: convention (C0301, line-too-long, ) Line too long (114/100)
+ xgboost_train.py:41: convention (C0304, missing-final-newline, ) Final newline missing
+ xgboost_train.py:1: convention (C0114, missing-module-docstring, ) Missing module docstring
+ xgboost_train.py:19: convention (C0103, invalid-name, ) Constant name "prefix" doesn't conform to UPPER_CASE naming style
+ xgboost_train.py:20: convention (C0103, invalid-name, ) Constant name "output_path" doesn't conform to UPPER_CASE naming style
+ xgboost_train.py:24: convention (C0103, invalid-name, ) Constant name "xgboost_container" doesn't conform to UPPER_CASE naming style
+ xgboost_train.py:24: error (E0602, undefined-variable, ) Undefined variable 'region'
+ xgboost_train.py:36: convention (C0103, invalid-name, ) Constant name "content_type" doesn't conform to UPPER_CASE naming style
+ xgboost_train.py:2: warning (W0611, unused-import, ) Unused import boto3
+ xgboost_train.py:3: warning (W0611, unused-import, ) Unused image_uris imported from sagemaker
+ xgboost_train.py:4: warning (W0611, unused-import, ) Unused Session imported from sagemaker.session
+ ************* Module train_val_test_split
+ train_val_test_split.py:2: convention (C0303, trailing-whitespace, ) Trailing whitespace
+ train_val_test_split.py:28: convention (C0304, missing-final-newline, ) Final newline missing
+ train_val_test_split.py:6: error (E0401, import-error, ) Unable to import 'sklearn'
+ train_val_test_split.py:7: error (E0401, import-error, ) Unable to import 'pandas'
+ train_val_test_split.py:16: convention (C0116, missing-function-docstring, main) Missing function or method docstring
+ train_val_test_split.py:19: convention (C0103, invalid-name, main) Variable name "df" doesn't conform to snake_case naming style
+ ************* Module build_container
+ build_container.py:8: convention (C0301, line-too-long, ) Line too long (113/100)
+ build_container.py:18: convention (C0303, trailing-whitespace, ) Trailing whitespace
+ build_container.py:1: convention (C0114, missing-module-docstring, ) Missing module docstring
+ build_container.py:3: convention (C0116, missing-function-docstring, main) Missing function or method docstring
+ build_container.py:8: warning (W0612, unused-variable, main) Unused variable 'processing_repository_uri'
+ build_container.py:2: convention (C0411, wrong-import-order, ) standard import "import os" should be placed before "import boto3"
+ ************* Module preprocess
+ preprocess.py:5: convention (C0304, missing-final-newline, ) Final newline missing
+ preprocess.py:1: convention (C0114, missing-module-docstring, ) Missing module docstring
+ ************* Module ci
+ ci.py:1: convention (C0114, missing-module-docstring, ) Missing module docstring
+ ci.py:3: convention (C0411, wrong-import-order, ) standard import "import shutil" should be placed before "from pylint import epylint as lint"
+ 
+ ------------------------------------------------------------------
+ Your code has been rated at 3.97/10 (previous run: 3.29/10, +0.69)
+ 
+ 
