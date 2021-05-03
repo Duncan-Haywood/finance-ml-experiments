@@ -1,14 +1,10 @@
 **/mlruns
 archive
-forecasting/notebooks_exploration/*.pkl
-forecasting/notebooks_exploration/mlruns/
-forecasting/end_to_end/data/
-**/data/*
+**/data/**
 **/.ipynb_checkpoints
 **/__pycache__
-*site-packages
 forecasting/notebooks_exploration/api_key.py
 **/alpha_key.yml
 **/*.pkl
-aws/forecasting/temp.parquet
-aws/forecasting/temp.csv
+**/*.parquet
+**/*.csv
