@@ -8,3 +8,4 @@ forecasting/notebooks_exploration/api_key.py
 **/*.pkl
 **/*.parquet
 **/*.csv
+**/.vscode/**
