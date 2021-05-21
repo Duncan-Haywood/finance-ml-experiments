@@ -8,7 +8,7 @@ import pandas as pd
 ## constants, file locations
 PERCENT = 0.15
 SEED = 0
-INPUT_PATH ='/opt/ml/processing/input'
+INPUT_PATH = '/opt/ml/processing/input'
 OUTPUT_PATH_TRAIN = '/opt/ml/processing/output/train'
 OUTPUT_PATH_VAL = '/opt/ml/processing/output/validation'
 OUTPUT_PATH_TEST = '/opt/ml/processing/output/test'
@@ -17,8 +17,8 @@ def main():
     """intakes, concats, splits, saves"""
     ## loads and concats
     files = os.listdir(INPUT_PATH)
-    df_mult = [pd.read_csv(f'{file}') for file in files]
-    df_full = pd.concat(df_mult)
+    df_multi = [pd.read_csv(f'{file}') for file in files]
+    df_full = pd.concat(df_multi)
     ## split
     df_inter, df_test = train_test_split(df_full, test_size=PERCENT, random_state=SEED)
     df_train, df_val = train_test_split(df_inter, test_size=PERCENT, random_state=SEED)
