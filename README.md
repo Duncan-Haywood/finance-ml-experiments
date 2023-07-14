@@ -1,2 +1,2 @@
-# finance_ml_experiments
+# finance ml experiments
 Some notebook style experiments.
